@@ -46,7 +46,7 @@
             font-weight: 600;
         }
         p { 
-            color: #2f3640; /* Magariisa Dukkanaa/Gurraacha lallafaa */
+            color: #2f3640; 
             line-height: 1.6; 
             font-size: 14.5px; 
             text-align: justify; 
@@ -80,7 +80,7 @@
             font-style: italic; 
             background-color: #f7fafc; 
             padding: 12px; 
-            border-left: 4px solid #e67e22; /* Sarara Keelloo/Orange */
+            border-left: 4px solid #e67e22; 
             margin: 15px 0; 
             font-size: 14px; 
             text-align: center;
@@ -107,7 +107,7 @@
         .bank-details h4 {
             margin-top: 15px;
             margin-bottom: 8px;
-            color: #2980b9; /* Buluu */
+            color: #2980b9; 
             border-bottom: 2px solid #2ecc71;
             padding-bottom: 3px;
             display: inline-block;
@@ -130,7 +130,7 @@
         }
 
         .notice-text {
-            color: #c0392b; /* Diimaa ifaa dhowwuu */
+            color: #c0392b; 
             font-weight: bold;
             font-size: 12.5px;
             margin-top: 15px;
@@ -162,70 +162,17 @@
 <body>
 
 <audio id="bgAudio" loop>
-    <source src="https://archive.org/download/alamayahu-m-yaa-gooftaa-qabeenya-kee/alamayahu_m_yaa_gooftaa_qabeenya_kee.mp3" type="audio/mpeg">
+    <source src="Addisu_Wayima__Ati_Waaqayyo.mp3" type="audio/mpeg">
     Ilaalchisee: Browser'n keessan audio kana hin tajaajilu.
 </audio>
 
 <div class="overlay-container">
     <div class="play-prompt" id="playTrigger">
-        🎵 KAI TUQI: Faarfannaa Alamaayyoo Dhaggeeffadhu!
+        🎵 KAI TUQI: Faarfannaa Addisuu Dhaggeeffadhu!
     </div>
 
     <h1>WALDAA W/W/W/M/Y TIIBEE HAARAA</h1>
     <h3>Waamicha Tumsa fi Gargaarsa Meeshaalee Muuziiqaa</h3>
     
     <p>Nagaan Gooftaa keenya <span class="highlight-blue">Iyyesuus Kiristoos</span> bakka jirtanitti isiniif haa baay'atu.</p>
-    <p>Waldaan keenya <span class="highlight-blue">W/W/W/M/Y Tiibee Haaraa</span> ishiin itti dhalannee guddinne har'a meeshaaleen muuziiqaa tajaajilaa turan garmalee jalaa caccabanii jiru. Sagaleen Waaqayyoo fi faarfannaan akka hin dhaabbanneef tumsa keessan barbaaddi. Maaloo waliin waldaa keenya <span class="highlight-green">haa deeggarru!</span></p>
-
-    <div class="quote">
-        "Hundi isaanii garmalee gammadoo turan, sanyiin garii tajaajila Waaqayyoof ni kennan."
-    </div>
-
-    <button class="btn" id="acceptBtn">Accept & Help (Gargaaruuf Waliigale)</button>
-
-    <div class="bank-details" id="bankInfo">
-        <h4>Odeeffannoo Herrega Baankii:</h4>
-        
-        <div class="bank-route">
-            📌 <span style="color: #2980b9; font-weight: bold;">Baankii Daldala Itoophiyaa (CBE):</span><br>
-            • Lakk. Herreegaa: <strong style="color: #e74c3c; font-size: 16px;">1000698406015</strong><br>
-            • Maqaa: <span class="highlight-orange">Habtamu Dhufera & Chala Getachew & Gemechis Emiyo</span>
-        </div>
-
-        <h4>Lakk. Bilbilaa Tajaajiltootaa:</h4>
-        <div class="phone-list">
-            <p>📞 Lakk. Bilbilaa 1: <span style="color: #27ae60;">+251 934456683</span></p>
-            <p>📞 Lakk. Bilbilaa 2: <span style="color: #27ae60;">+251 917391913</span></p>
-            <p>📞 Lakk. Bilbilaa 3: <span style="color: #27ae60;">+251 941394537</span></p>
-            <p>📞 Lakk. Bilbilaa 4: <span style="color: #27ae60;">+251 952724474</span></p>
-        </div>
-
-        <p class="notice-text">⚠️ Hubachiisa: Erga gumaacha keessan ergitanii booda, nagahee (screenshot) herreegaa lakk. bilbilaa armaan olii kanaan Telegram ykn WhatsApp irratti nuuf erguun nu gabaasaa. Waaqayyo isin haa eebbisu!</p>
-    </div>
-</div>
-
-<script>
-    var audio = document.getElementById('bgAudio');
-    var playTrigger = document.getElementById('playTrigger');
-
-    function startAudio() {
-        audio.play().then(() => {
-            playTrigger.style.display = 'none'; 
-        }).catch(error => {
-            console.log("Autoplay dhowwameera, tuqannaa deebi'ii yaali.");
-        });
-    }
-
-    playTrigger.addEventListener('click', startAudio);
-    document.body.addEventListener('click', startAudio, { once: true }); 
-
-    document.getElementById('acceptBtn').addEventListener('click', function(e) {
-        e.stopPropagation(); 
-        document.getElementById('bankInfo').style.display = 'block';
-        this.style.display = 'none';
-        alert("Waliigaluu keessaniif galatoomaa! Gumaacha keessan odeeffannoo herrega baankii gadiitiin erguu dandeessu.");
-    });
-</script>
-
-</body>
-</html>
+    <p>Waldaan keenya <span class="highlight-blue">W/W/W/M/Y Tiibee Haaraa</span> ishiin
