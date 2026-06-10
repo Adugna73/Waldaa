@@ -30,7 +30,6 @@
         h3 { color: #e74c3c; font-size: 14px; margin-top: 0; margin-bottom: 15px; }
         p { color: #34495e; line-height: 1.5; font-size: 14px; text-align: justify; }
         
-        /* Battonii Muuziiqaa Jalqabsiisu */
         .play-prompt {
             background-color: #3498db;
             color: white;
@@ -56,28 +55,29 @@
 <body>
 
 <audio id="bgAudio" loop>
-    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3" type="audio/mpeg">
+    <source src="https://gospelom.com/wp-content/uploads/2024/02/Alamayahu-Mokonnen-Atis-Kankooti.mp3" type="audio/mpeg">
+    Ilaalchisee: Browser'n keessan audio kana hin tajaajilu.
 </audio>
 
 <div class="overlay-container">
     <div class="play-prompt" id="playTrigger">
-        🎵 Fuula Kana Tuqiiti Faarfannaa Dhaggeeffadhu!
+        🎵 Fuula Kana Tuqiiti Faarfannaa Alamaayyoo Dhaggeeffadhu!
     </div>
 
     <h1>WALDAA W/W/W/M/Y TIIBEE HAARAA</h1>
     <h3>Waamicha Tumsa fi Gargaarsa Meeshaalee Muuziiqaa</h3>
     
     <p>Nagaan Gooftaa keenya Iyyesuus Kiristoos bakka jirtanitti isiniif haa baay'atu.</p>
-    <p>Waldaan keenya <strong>W/W/W/M/Y Tiibee Haaraa</strong> ishiin itti dhalannee guddinne har'a meeshaaleen muuziiqaa tajaajilaa turan garmalee jalaa caccabanii jiru. Sagaleen Waaqayyoo fi faarfannaan akka hin dhaabbanneef tumsa keessan barbaaddi.</p>
+    <p>Waldaan keenya <strong>W/W/W/M/Y Tiibee Haaraa</strong> ishiin itti dhalannee guddinne har'a meeshaaleen muuziiqaa tajaajilaa turan garmalee jalaa caccabanii jiru. Sagaleen Waaqayyoo fi faarfannaan akka hin dhaabbanneef tumsa keessan barbaaddi. Maaloo waliin waldaa keenya haa deeggarru!</p>
 
     <div class="quote">
-        "Hundi isaanii garmalee gammadoo turan..."
+        "Hundi isaanii garmalee gammadoo turan, sanyiin garii tajaajila Waaqayyoof ni kennan."
     </div>
 
     <button class="btn" id="acceptBtn">Accept & Help (Gargaaruuf Waliigale)</button>
 
     <div class="bank-details" id="bankInfo">
-        <p><strong>CBE:</strong> 1000xxxxxxxx (Maqaa Waldaatiin)</p>
+        <p><strong>CBE (Baankii Daldalaa):</strong> 1000xxxxxxxx (Maqaa Waldaatiin)</p>
         <p><strong>Lakk. Bilbilaa:</strong> +251 9xx-xx-xx-xx</p>
     </div>
 </div>
@@ -86,23 +86,22 @@
     var audio = document.getElementById('bgAudio');
     var playTrigger = document.getElementById('playTrigger');
 
-    // Namni sun battonii dhiibee ykn skiriinii tuqeen muuziiqaan ni ka'a
     function startAudio() {
         audio.play().then(() => {
-            playTrigger.style.display = 'none'; // Erga taphachuu eegeleen ni dhabama
+            playTrigger.style.display = 'none'; 
         }).catch(error => {
-            console.log("Autoplay dhowwameera, tuqannaa deebi'ii yaali.");
+            console.log("Autoplay dhowwameera.");
         });
     }
 
     playTrigger.addEventListener('click', startAudio);
-    document.body.addEventListener('click', startAudio, { once: true }); // Skiriinii altokkof qofa
+    document.body.addEventListener('click', startAudio, { once: true }); 
 
     document.getElementById('acceptBtn').addEventListener('click', function(e) {
         e.stopPropagation(); 
         document.getElementById('bankInfo').style.display = 'block';
         this.style.display = 'none';
-        alert("Waliigaluu keessaniif galatoomaa!");
+        alert("Waliigaluu keessaniif galatoomaa! Gumaacha keessan herrega baankii gadiitiin erguu dandeessu.");
     });
 </script>
 
