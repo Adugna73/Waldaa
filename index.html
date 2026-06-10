@@ -14,78 +14,81 @@
             font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 0;
-            /* Haalluu duubbaa abaaboo fi dhangala'aa (Mandala Theme) */
-            background: radial-gradient(circle, #1a0b2e 0%, #0a0414 100%);
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('waldaa.jpg') no-repeat center center fixed;
+            background-size: cover;
             min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
             padding: 20px;
-            overflow-x: hidden;
         }
-
-        /* --- ARMAAN GADIIN BOCA ABAABOO (FLOWER/MANDALA EFFECT) UUMNA --- */
-        .flower-background {
-            position: relative;
-            width: 100%;
-            max-width: 530px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        /* Xiyyoo / Baala Abaaboo Haalluu Garaagaraa (Layer 1) */
-        .flower-background::before {
-            content: '';
-            position: absolute;
-            width: 115%;
-            height: 115%;
-            border-radius: 43% 57% 41% 59% / 57% 45% 55% 43%;
-            background: linear-gradient(45deg, #e74c3c, #9b59b6, #3498db, #e67e22, #2ecc71);
-            background-size: 300% 300%;
-            animation: glowRotate 8s linear infinite, waveEffect 4s ease-in-out infinite alternate;
-            z-index: 1;
-            filter: blur(15px);
-            opacity: 0.85;
-        }
-
-        /* Xiyyoo / Baala Abaaboo Gidduu (Layer 2) */
-        .flower-background::after {
-            content: '';
-            position: absolute;
-            width: 108%;
-            height: 108%;
-            border-radius: 55% 45% 60% 40% / 45% 60% 40% 55%;
-            background: linear-gradient(135deg, #f1c40f, #e74c3c, #1abc9c, #9b59b6);
-            background-size: 200% 200%;
-            animation: glowRotate 12s linear infinite reverse;
-            z-index: 1;
-            filter: blur(8px);
-            opacity: 0.9;
-        }
-
-        /* Animashinii Haalluu Naanneessuufi Mirmirsuuf */
-        @keyframes glowRotate {
-            0% { background-position: 0% 50%; transform: rotate(0deg); }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; transform: rotate(360deg); }
-        }
-        @keyframes waveEffect {
-            0% { border-radius: 43% 57% 41% 59% / 57% 45% 55% 43%; }
-            100% { border-radius: 57% 43% 59% 41% / 45% 57% 43% 55%; }
-        }
-
-        /* --- SAANDUQA ODEEFFANNOO (MAIN CONTAINER) --- */
         .overlay-container {
             background-color: rgba(255, 255, 255, 0.96);
             padding: 35px 30px;
-            border-radius: 24px;
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+            max-width: 500px;
             width: 100%;
             text-align: center;
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
             position: relative;
-            z-index: 5; /* Abaaboo duubbaa jiru ol akka mullatuuf */
-            border: 2px solid rgba(255, 255, 255, 0.5);
+            overflow: hidden; /* Haababoon alatti akka hin baaneef */
+        }
+
+        /* Haababoo Gurguddoo Naannoo Xiyyoo */
+        .overlay-container::before,
+        .overlay-container::after {
+            content: '';
+            position: absolute;
+            background-repeat: no-repeat;
+            background-size: contain;
+            opacity: 0.15; /* Salphaatti akka mul'atuuf */
+            z-index: 0;
+        }
+        /* Gara Bitaa Mirgaa Olitti */
+        .overlay-container::before {
+            background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48ZyBmaWxsPSIjZjc0YzNjIj48cGF0aCBkPSJNMzAsMzBDMzAsMTMuNDMzLDE2LjU2NywwLDAsMFMzMCwwLDM4LDEzLjQzMywzMCwzMFoiLz48cGF0aCBkPSJNMzAsMzBDMzAsNDYuNTY3LDE2LjU2Nyw2MCwwLDYwUzYwLDYwLDY4LDQ2LjU2NywzMCwzMFoiLz48cGF0aCBkPSJNMzAtMDBDNDYuNTY3LDAsNjAsMTMuNDMzLDYwLDMwUzMwLDMwLDIyLDEzLjQzMywzMCwwWiIvPjwvc3ZnPg==');
+            width: 150px;
+            height: 150px;
+            top: -50px;
+            left: -50px;
+        }
+        /* Gara Bitaa Mirgaa Jalaatti */
+        .overlay-container::after {
+            background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48ZyBmaWxsPSIjMzQ5OGRiIj48cGF0aCBkPSJNMzAsMzBDMzAsMTMuNDMzLDE2LjU2NywwLDAsMFMzMCwwLDM4LDEzLjQzMywzMCwzMFoiLz48cGF0aCBkPSJNMzAsMzBDMzAsNDYuNTY3LDE2LjU2Nyw2MCwwLDYwUzYwLDYwLDY4LDQ2LjU2NywzMCwzMFoiLz48cGF0aCBkPSJNMzAtMDBDNDYuNTY3LDAsNjAsMTMuNDMzLDYwLDMwUzMwLDMwLDIyLDEzLjQzMywzMCwwWiIvPjwvc3ZnPg==');
+            width: 200px;
+            height: 200px;
+            bottom: -80px;
+            right: -80px;
+        }
+
+        /* Haababoo xixiqqoo bittinnaa'an */
+        .flower-accent {
+            position: absolute;
+            background-repeat: no-repeat;
+            background-size: contain;
+            opacity: 0.1;
+            z-index: 0;
+        }
+        .flower-accent.f1 {
+            background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48ZyBmaWxsPSIjMmVjYzc4Ij48cGF0aCBkPSJNMzAsMzBDMzAsMTMuNDMzLDE2LjU2NywwLDAsMFMzMCwwLDM4LDEzLjQzMywzMCwzMFoiLz48cGF0aCBkPSJNMzAsMzBDMzAsNDYuNTY3LDE2LjU2Nyw2MCwwLDYwUzYwLDYwLDY4LDQ2LjU2NywzMCwzMFoiLz48cGF0aCBkPSJNMzAtMDBDNDYuNTY3LDAsNjAsMTMuNDMzLDYwLDMwUzMwLDMwLDIyLDEzLjQzMywzMCwwWiIvPjwvc3ZnPg==');
+            width: 80px;
+            height: 80px;
+            top: 40%;
+            left: 20px;
+        }
+        .flower-accent.f2 {
+            background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48ZyBmaWxsPSIjZmMwMTEiIj48cGF0aCBkPSJNMzAsMzBDMzAsMTMuNDMzLDE2LjU2NywwLDAsMFMzMCwwLDM4LDEzLjQzMywzMCwzMFoiLz48cGF0aCBkPSJNMzAsMzBDMzAsNDYuNTY3LDE2LjU2Nyw2MCwwLDYwUzYwLDYwLDY4LDQ2LjU2NywzMCwzMFoiLz48cGF0aCBkPSJNMzAtMDBDNDYuNTY3LDAsNjAsMTMuNDMzLDYwLDMwUzMwLDMwLDIyLDEzLjQzMywzMCwwWiIvPjwvc3ZnPg==');
+            width: 100px;
+            height: 100px;
+            top: 20%;
+            right: 40px;
+        }
+
+        h1, h3, p, .play-prompt, .quote, .btn, .bank-details {
+            position: relative; /* Haababoo jala akka hin dhaabbanneef */
+            z-index: 1;
         }
 
         h1 { 
@@ -111,7 +114,6 @@
             margin-bottom: 15px;
         }
         
-        /* Button Taphuu */
         .play-prompt {
             background: linear-gradient(135deg, #e74c3c, #c0392b);
             color: white;
@@ -122,19 +124,18 @@
             margin-bottom: 25px;
             cursor: pointer;
             box-shadow: 0 5px 15px rgba(231, 76, 60, 0.4);
-            animation: pulse 1.5s infinite;
+            animation: pulse 1.8s infinite;
             display: inline-block;
             width: 100%;
             border: none;
             outline: none;
         }
         @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.03); }
-            100% { transform: scale(1); }
+            0% { transform: scale(1); box-shadow: 0 5px 15px rgba(231, 76, 60, 0.4); }
+            50% { transform: scale(1.03); box-shadow: 0 5px 25px rgba(231, 76, 60, 0.6); }
+            100% { transform: scale(1); box-shadow: 0 5px 15px rgba(231, 76, 60, 0.4); }
         }
 
-        /* Caqasa/Quote */
         .quote { 
             font-style: italic; 
             background-color: #f8f9fa; 
@@ -145,9 +146,9 @@
             font-size: 13px; 
             color: #555;
             text-align: center; 
+            box-shadow: inset 0 1px 3px rgba(0,0,0,0.05);
         }
         
-        /* Odeeffannoo Baankii */
         .bank-details { 
             background-color: #f4f9fc; 
             padding: 20px; 
@@ -179,10 +180,6 @@
             box-shadow: 0 2px 5px rgba(0,0,0,0.03);
             border-left: 3px solid #2ecc71;
         }
-        .phone-list p {
-            margin: 6px 0;
-            font-size: 13px;
-        }
         .notice-text {
             color: #e67e22;
             font-weight: 600;
@@ -192,7 +189,6 @@
             padding-top: 12px;
         }
         
-        /* Button gargaarsaa */
         .btn { 
             background: linear-gradient(135deg, #2ecc71, #27ae60); 
             color: white; 
@@ -220,44 +216,43 @@
     Ilaalchisee: Browser'n keessan audio kana hin tajaajilu.
 </audio>
 
-<!-- Saanduuqa duubbaatti xiyyoo abaaboo uumuuf kan dabalame -->
-<div class="flower-background">
-    <div class="overlay-container">
-        <button class="play-prompt" id="playTrigger">
-            🎵 KAI TUQI: Faarfannaa Alamaayyoo Dhaggeeffadhu!
-        </button>
+<div class="overlay-container">
+    <!-- Haababoo xixiqqoo bittinnaa'an -->
+    <div class="flower-accent f1"></div>
+    <div class="flower-accent f2"></div>
 
-        <h1>WALDAA W/W/W/M/Y TIIBEE HAARAA</h1>
-        <h3>Waamicha Tumsa fi Gargaarsa Meeshaalee Muuziiqaa</h3>
+    <button class="play-prompt" id="playTrigger">
+        🎵 KAI TUQI: Faarfannaa Alamaayyoo Dhaggeeffadhu!
+    </button>
+
+    <h1>WALDAA W/W/W/M/Y TIIBEE HAARAA</h1>
+    <h3>Waamicha Tumsa fi Gargaarsa Meeshaalee Muuziiqaa</h3>
+    
+    <p>Nagaan Gooftaa keenya Iyyesuus Kiristoos bakka jirtanitti isiniif haa baay'atu.</p>
+    <p>Waldaan keenya <strong>W/W/W/M/Y Tiibee Haaraa</strong> ishiin itti dhalannee guddinne har'a meeshaaleen muuziiqaa tajaajilaa turan garmalee jalaa caccabanii jiru. Sagaleen Waaqayyoo fi faarfannaan akka hin dhaabbanneef tumsa keessan barbaaddi. Maaloo waliin waldaa keenya haa deeggarru!</p>
+
+    <div class="quote">
+        "Hundi isaanii garmalee gammadoo turan, sanyiin garii tajaajila Waaqayyoof ni kennan."
+    </div>
+
+    <button class="btn" id="acceptBtn">Accept & Help (Gargaaruuf Waliigale)</button>
+
+    <div class="bank-details" id="bankInfo">
+        <h4>Odeeffannoo Herrega Baankii Waldaa:</h4>
         
-        <p>Nagaan Gooftaa keenya Iyyesuus Kiristoos bakka jirtanitti isiniif haa baay'atu.</p>
-        <p>Waldaan keenya <strong>W/W/W/M/Y Tiibee Haaraa</strong> ishiin itti dhalannee guddinne har'a meeshaaleen muuziiqaa tajaajilaa turan garmalee jalaa caccabanii jiru. Sagaleen Waaqayyoo fi faarfannaan akka hin dhaabbanneef tumsa keessan barbaaddi. Maaloo waliin waldaa keenya haa deeggarru!</p>
-
-        <div class="quote">
-            "Hundi isaanii garmalee gammadoo turan, sanyiin garii tajaajila Waaqayyoof ni kennan."
+        <div class="bank-route">
+            📌 <strong>Baankii Daldala Itoophiyaa (CBE):</strong><br>
+            • Lakk. Herreegaa: <strong style="color: #e74c3c; font-size: 15px;">1000698406015</strong><br>
+            • Maqaa: Habtamu Dhufera & Chala Getachew & Gemechis Emiyo
         </div>
 
-        <button class="btn" id="acceptBtn">Accept & Help (Gargaaruuf Waliigale)</button>
+        <h4>Lakk. Bilbilaa Tajaajiltootaa:</h4>
+        <p>📞 Lakk. Bilbilaa 1: +251 934456683</p>
+        <p>📞 Lakk. Bilbilaa 2: +251 917391913</p>
+        <p>📞 Lakk. Bilbilaa 3: +251 941394537</p>
+        <p>📞 Lakk. Bilbilaa 4: +251 952724474</p>
 
-        <div class="bank-details" id="bankInfo">
-            <h4>Odeeffannoo Herrega Baankii Waldaa:</h4>
-            
-            <div class="bank-route">
-                📌 <strong>Baankii Daldala Itoophiyaa (CBE):</strong><br>
-                • Lakk. Herreegaa: <strong style="color: #e74c3c; font-size: 15px;">1000698406015</strong><br>
-                • Maqaa: Habtamu Dhufera & Chala Getachew & Gemechis Emiyo
-            </div>
-
-            <h4>Lakk. Bilbilaa Tajaajiltootaa:</h4>
-            <div class="phone-list">
-                <p>📞 <strong>Lakk. Bilbilaa 1:</strong> +251 934456683</p>
-                <p>📞 <strong>Lakk. Bilbilaa 2:</strong> +251 917391913</p>
-                <p>📞 <strong>Lakk. Bilbilaa 3:</strong> +251 941394537</p>
-                <p>📞 <strong>Lakk. Bilbilaa 4:</strong> +251 952724474</p>
-            </div>
-
-            <p class="notice-text">⚠️ Hubachiisa: Erga gumaacha keessan ergitanii booda, nagahee (screenshot) herreegaa lakk. bilbilaa armaan olii kanaan Telegram ykn WhatsApp irratti nuuf erguun nu gabaasaa. Waaqayyo isin haa eebbisu!</p>
-        </div>
+        <p class="notice-text">⚠️ Hubachiisa: Erga gumaacha keessan ergitanii booda, nagahee (screenshot) herreegaa lakk. bilbilaa armaan olii kanaan Telegram ykn WhatsApp irratti nuuf erguun nu gabaasaa. Waaqayyo isin haa eebbisu!</p>
     </div>
 </div>
 
