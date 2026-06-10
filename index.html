@@ -31,9 +31,9 @@
         p { color: #34495e; line-height: 1.5; font-size: 14px; text-align: justify; }
         
         .play-prompt {
-            background-color: #3498db;
+            background-color: #e74c3c;
             color: white;
-            padding: 10px;
+            padding: 12px;
             border-radius: 8px;
             font-weight: bold;
             margin-bottom: 15px;
@@ -48,7 +48,6 @@
 
         .quote { font-style: italic; background-color: #f1f2f6; padding: 8px; border-left: 4px solid #3498db; margin: 10px 0; font-size: 13px; text-align: center; }
         
-        /* Iddoo Lakk. Baankii fi Bilbilaa */
         .bank-details { 
             background-color: #e8f4f8; 
             padding: 15px; 
@@ -86,13 +85,13 @@
 <body>
 
 <audio id="bgAudio" loop>
-    <source src="https://gospelom.com/wp-content/uploads/2024/02/Alamayahu-Mokonnen-Atis-Kankooti.mp3" type="audio/mpeg">
+    <source src="https://archive.org/download/alamayahu-m-atis-kankooti/alamayahu_m_atis_kankooti.mp3" type="audio/mpeg">
     Ilaalchisee: Browser'n keessan audio kana hin tajaajilu.
 </audio>
 
 <div class="overlay-container">
     <div class="play-prompt" id="playTrigger">
-        🎵 Fuula Kana Tuqiiti Faarfannaa Alamaayyoo Dhaggeeffadhu!
+        🎵 KAI TUQI: Faarfannaa Alamaayyoo Dhaggeeffadhu!
     </div>
 
     <h1>WALDAA W/W/W/M/Y TIIBEE HAARAA</h1>
@@ -123,7 +122,7 @@
         </div>
 
         <h4>Lakk. Bilbilaa Tajaajiltootaa:</h4>
-        <p>📞 <strong>Obbo [Maqaa Asitti Galchi]:</strong> +251 9xx-xx-xx-xx (Koreewwan gargaarsaa)</p>
+        <p>📞 <strong>Obbo [Maqaa Asitti Galchi]:</strong> +251 9xx-xx-xx-xx</p>
         <p>📞 <strong>Lallabaa/Faarfataa [Maqaa]:</strong> +251 9xx-xx-xx-xx</p>
 
         <p class="notice-text">⚠️ Hubachiisa: Erga gumaacha keessan ergitanii booda, nagahee (screenshot) herreegaa lakk. bilbilaa armaan olii kanaan Telegram ykn WhatsApp irratti nuuf erguun nu gabaasaa. Waaqayyo isin haa eebbisu!</p>
@@ -138,7 +137,7 @@
         audio.play().then(() => {
             playTrigger.style.display = 'none'; 
         }).catch(error => {
-            console.log("Autoplay dhowwameera.");
+            console.log("Autoplay dhowwameera, tuqannaa deebi'ii yaali.");
         });
     }
 
