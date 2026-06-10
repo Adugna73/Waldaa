@@ -32,14 +32,14 @@
 
         /* Halluu Mata Dureewwanii */
         h1 { 
-            color: #2c3e50; /* Buluu Dukkanaawaa */
+            color: #2c3e50; 
             font-size: 20px; 
             margin-bottom: 5px;
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
         h3 { 
-            color: #e74c3c; /* Diimaa Ifaa */
+            color: #e74c3c; 
             font-size: 15px; 
             margin-top: 0; 
             margin-bottom: 20px; 
@@ -84,7 +84,7 @@
             margin: 15px 0; 
             font-size: 14px; 
             text-align: center;
-            color: #8e44ad; /* Barruu Dhiilgee/Purple */
+            color: #8e44ad; 
             border-radius: 0 8px 8px 0;
             font-weight: 500;
         }
@@ -175,4 +175,62 @@
     <h3>Waamicha Tumsa fi Gargaarsa Meeshaalee Muuziiqaa</h3>
     
     <p>Nagaan Gooftaa keenya <span class="highlight-blue">Iyyesuus Kiristoos</span> bakka jirtanitti isiniif haa baay'atu.</p>
-    <p>Waldaan keenya <span class="highlight-blue">W/W/W/M/Y Tiibee Haaraa</span> ishiin
+    <p>Waldaan keenya <span class="highlight-blue">W/W/W/M/Y Tiibee Haaraa</span> ishiin itti dhalannee guddinne har'a meeshaaleen muuziiqaa tajaajilaa turan garmalee jalaa caccabanii jiru. Sagaleen Waaqayyoo fi faarfannaan akka hin dhaabbanneef tumsa keessan barbaaddi. Maaloo waliin waldaa keenya <span class="highlight-green">haa deeggarru!</span></p>
+
+    <div class="quote">
+        "Hundi isaanii garmalee gammadoo turan, sanyiin garii tajaajila Waaqayyoof ni kennan."
+    </div>
+
+    <button class="btn" id="acceptBtn">Accept & Help (Gargaaruuf Waliigale)</button>
+
+    <div class="bank-details" id="bankInfo">
+        <h4>Odeeffannoo Herrega Baankii:</h4>
+        
+        <div class="bank-route">
+            📌 <span style="color: #2980b9; font-weight: bold;">Baankii Daldala Itoophiyaa (CBE):</span><br>
+            • Lakk. Herreegaa: <strong style="color: #e74c3c; font-size: 16px;">1000698406015</strong><br>
+            • Maqaa: <span class="highlight-orange">Habtamu Dhufera & Chala Getachew & Gemechis Emiyo</span>
+        </div>
+
+        <h4>Lakk. Bilbilaa Tajaajiltootaa:</h4>
+        <div class="phone-list">
+            <p>📞 Lakk. Bilbilaa 1: <span style="color: #27ae60;">+251 934456683</span></p>
+            <p>📞 Lakk. Bilbilaa 2: <span style="color: #27ae60;">+251 917391913</span></p>
+            <p>📞 Lakk. Bilbilaa 3: <span style="color: #27ae60;">+251 941394537</span></p>
+            <p>📞 Lakk. Bilbilaa 4: <span style="color: #27ae60;">+251 952724474</span></p>
+        </div>
+
+        <p class="notice-text">⚠️ Hubachiisa: Erga gumaacha keessan ergitanii booda, nagahee (screenshot) herreegaa lakk. bilbilaa armaan olii kanaan Telegram ykn WhatsApp irratti nuuf erguun nu gabaasaa. Waaqayyo isin haa eebbisu!</p>
+    </div>
+</div>
+
+<script>
+    var audio = document.getElementById('bgAudio');
+    var playTrigger = document.getElementById('playTrigger');
+
+    function startAudio(e) {
+        if(e) e.stopPropagation(); 
+        
+        audio.play().then(() => {
+            // Yommuu muuziiqaan taphatu barruun isaa ofumaan gara magariisaatti jijjiirama
+            playTrigger.innerHTML = "🎵 Taphachaa Jira... (Dhaggeeffadhu)";
+            playTrigger.style.animation = "none";
+            playTrigger.style.background = "linear-gradient(135deg, #27ae60, #2ecc71)"; 
+        }).catch(error => {
+            console.log("Autoplay dhowwameera: " + error);
+        });
+    }
+
+    // Tuqannaa irratti muuziiqicha akka jalqabu godha
+    playTrigger.addEventListener('click', startAudio);
+
+    document.getElementById('acceptBtn').addEventListener('click', function(e) {
+        e.stopPropagation(); 
+        document.getElementById('bankInfo').style.display = 'block';
+        this.style.display = 'none';
+        alert("Waliigaluu keessaniif galatoomaa! Gumaacha keessan odeeffannoo herrega baankii gadiitiin erguu dandeessu.");
+    });
+</script>
+
+</body>
+</html>
