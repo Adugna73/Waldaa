@@ -17,7 +17,7 @@
             align-items: center;
         }
         .overlay-container {
-            background-color: rgba(255, 255, 255, 0.92);
+            background-color: rgba(255, 255, 255, 0.94);
             padding: 25px;
             border-radius: 15px;
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
@@ -46,9 +46,40 @@
             100% { transform: scale(1); }
         }
 
-        .quote { font-style: italic; background-color: #f1f2f6; padding: 8px; border-left: 4px solid #3498db; margin: 10px 0; font-size: 13px; }
-        .bank-details { background-color: #e8f4f8; padding: 12px; border-radius: 8px; margin-top: 15px; display: none; font-size: 13px; text-align: left; }
-        .btn { background-color: #2ecc71; color: white; border: none; padding: 10px 25px; font-size: 14px; font-weight: bold; border-radius: 20px; cursor: pointer; margin-top: 10px; }
+        .quote { font-style: italic; background-color: #f1f2f6; padding: 8px; border-left: 4px solid #3498db; margin: 10px 0; font-size: 13px; text-align: center; }
+        
+        /* Iddoo Lakk. Baankii fi Bilbilaa */
+        .bank-details { 
+            background-color: #e8f4f8; 
+            padding: 15px; 
+            border-radius: 8px; 
+            margin-top: 15px; 
+            display: none; 
+            font-size: 13px; 
+            text-align: left; 
+            border: 1px solid #bce1ec;
+        }
+        .bank-details h4 {
+            margin-top: 0;
+            color: #2c3e50;
+            border-bottom: 1px dashed #3498db;
+            padding-bottom: 5px;
+        }
+        .bank-route {
+            margin-bottom: 10px;
+            padding: 5px;
+            background: white;
+            border-radius: 4px;
+        }
+        .notice-text {
+            color: #e67e22;
+            font-weight: bold;
+            font-size: 12px;
+            margin-top: 10px;
+            border-top: 1px solid #ddd;
+            padding-top: 8px;
+        }
+        .btn { background-color: #2ecc71; color: white; border: none; padding: 12px 25px; font-size: 14px; font-weight: bold; border-radius: 20px; cursor: pointer; margin-top: 10px; }
         audio { display: none; }
     </style>
 </head>
@@ -77,8 +108,25 @@
     <button class="btn" id="acceptBtn">Accept & Help (Gargaaruuf Waliigale)</button>
 
     <div class="bank-details" id="bankInfo">
-        <p><strong>CBE (Baankii Daldalaa):</strong> 1000xxxxxxxx (Maqaa Waldaatiin)</p>
-        <p><strong>Lakk. Bilbilaa:</strong> +251 9xx-xx-xx-xx</p>
+        <h4>Odeeffannoo Herrega Baankii Waldaa:</h4>
+        
+        <div class="bank-route">
+            📌 <strong>Baankii Daldala Itoophiyaa (CBE):</strong><br>
+            • Lakk. Herreegaa: 1000xxxxxxxx<br>
+            • Maqaa: Waldaa W/W/W/M/Y Tiibee Haaraa
+        </div>
+
+        <div class="bank-route">
+            📌 <strong>Baankii Awash (Optional):</strong><br>
+            • Lakk. Herreegaa: 0134xxxxxxxxxx<br>
+            • Maqaa: Waldaa W/W/W/M/Y Tiibee Haaraa
+        </div>
+
+        <h4>Lakk. Bilbilaa Tajaajiltootaa:</h4>
+        <p>📞 <strong>Obbo [Maqaa Asitti Galchi]:</strong> +251 9xx-xx-xx-xx (Koreewwan gargaarsaa)</p>
+        <p>📞 <strong>Lallabaa/Faarfataa [Maqaa]:</strong> +251 9xx-xx-xx-xx</p>
+
+        <p class="notice-text">⚠️ Hubachiisa: Erga gumaacha keessan ergitanii booda, nagahee (screenshot) herreegaa lakk. bilbilaa armaan olii kanaan Telegram ykn WhatsApp irratti nuuf erguun nu gabaasaa. Waaqayyo isin haa eebbisu!</p>
     </div>
 </div>
 
@@ -101,7 +149,7 @@
         e.stopPropagation(); 
         document.getElementById('bankInfo').style.display = 'block';
         this.style.display = 'none';
-        alert("Waliigaluu keessaniif galatoomaa! Gumaacha keessan herrega baankii gadiitiin erguu dandeessu.");
+        alert("Waliigaluu keessaniif galatoomaa! Gumaacha keessan odeeffannoo herrega baankii gadiitiin erguu dandeessu.");
     });
 </script>
 
