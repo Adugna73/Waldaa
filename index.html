@@ -1,4 +1,4 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="om">
 <head>
     <meta charset="UTF-8">
@@ -34,6 +34,30 @@
             color: #e74c3c;
             text-align: center;
         }
+        .church-photo {
+            width: 100%;
+            max-height: 300px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        }
+        .audio-container {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 20px 0;
+            border: 1px solid #e2e8f0;
+        }
+        .audio-container p {
+            margin-top: 0;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+        audio {
+            width: 100%;
+        }
         p {
             color: #34495e;
             line-height: 1.6;
@@ -52,7 +76,7 @@
             padding: 15px;
             border-radius: 8px;
             margin-top: 20px;
-            display: none; /* Jalqaba irratti hin mul'atu */
+            display: none;
         }
         .btn-container {
             text-align: center;
@@ -77,14 +101,22 @@
 <body>
 
 <div class="container">
+    <img src="waldaa.jpg" alt="Suuraa Waldaa Tiibee Haaraa" class="church-photo">
+
     <h1>WALDAA W/W/W/M/Y TIIBEE HAARAA</h1>
     <h3>Waamicha Tumsa fi Gargaarsa Meeshaalee Muuziiqaa</h3>
+    
+    <div class="audio-container">
+        <p>🎵 Faarfannaa Waldaa Keenyaa Dhaggeeffadhaa</p>
+        <audio controls>
+            <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+            Ilaalchisee: Browser'n keessan audio kana hin tajaajilu.
+        </audio>
+    </div>
     
     <p>Nagaan Gooftaa keenya Iyyesuus Kiristoos bakka jirtanitti isiniif haa baay'atu.</p>
     
     <p>Akkuma beekamu, Waldaan keenya <strong>W/W/W/M/Y Tiibee Haaraa</strong> tajaajila wangeelaa fi faarfannaa babal'isuuf carraaqqii guddaa gochaa jirti. Haata'u malee, meeshaaleen muuziiqaa tajaajila qulqulluuf itti fayyadamaa turre sababa dulloomaniifi keessisaanii garmalee <strong>miidhamee (damaged/distorted)</strong> jiruuf, yeroo ammaa kana hojii dhaabanii jiru. Miidhaa meeshaalee kanarraan kan ka'e, tajaajilli faarfannaa fi dambaliin sagalee tajaajila gufachiisaa jira.</p>
-    
-    <p>Kanaafuu, tajaajilli muuziiqaa fi faarfannaa waldaa keenyaa bifa haaraafi miidhagaan akka itti fufuuf, meeshaalee muuziiqaa haaraa waliin taanee bituuf karoora qabanneerra. Tajaajila kana galmaan gahuuf deeggarsi fi hirmaannaan keessan nuuf murteessaadha.</p>
 
     <div class="quote">
         "Hundi isaanii garmalee gammadoo turan, sanyiin garii tajaajila Waaqayyoof ni kennan."
@@ -92,28 +124,27 @@
 
     <p>Isinis tajaajila Waaqayyoo kana cinaa dhaabbatanii, meeshaalee tajaajilaa kanneen akka nuuf bitamaniif nu tumsitanii fi nu gargaartan kabajaan isiniin gaafanna. Waaqayyo isin haa eebbisu!</p>
 
-    <!-- Qabduu (Button) Hiriyoonni keessan "Accept" itti godhan -->
     <div class="btn-container">
         <button class="btn" id="acceptBtn">Accept & Help (Gargaaruuf Waliigale)</button>
     </div>
 
-    <!-- Iddoo Deetaayilii Baankii (Erga Accept godhanii booda mul'atu) -->
     <div class="bank-details" id="bankInfo">
         <h4>Galatoomaa! Iddoo Ergaa fi Herrega Baankii Waldaa:</h4>
         <p><strong>Commercial Bank of Ethiopia (CBE):</strong> 1000xxxxxxxx (Maqaa Waldaatiin)</p>
         <p><strong>Lakk. Bilbilaa Tajaajilaa:</strong> +251 9xx-xx-xx-xx</p>
-        <p><em>Deeggarsa keessan erga raawwattanii booda lakk. bilbilaa kanaan nuuf bilbilaa. Waaqayyo isin haa eebbisu!</em></p>
     </div>
 </div>
 
 <script>
-    // JavaScript Hiriyoonni keessan yoo Accept cuqaasan baankii akka fidu gochuuf
     document.getElementById('acceptBtn').addEventListener('click', function() {
         document.getElementById('bankInfo').style.display = 'block';
-        this.style.display = 'none'; // Button sana ni dhoksa
+        this.style.display = 'none';
         alert("Waliigaluu keessaniif galatoomaa! Gumaacha keessan herrega baankii gadiitiin erguu dandeessu.");
     });
 </script>
+
+</body>
+</html>
 
 </body>
 </html>
