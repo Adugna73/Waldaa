@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gargaarsa Waldaa W/W/W/M/Y Tiibee Haaraa</title>
-    <!-- Google Fonts dabaluun barruu midhagsuuf -->
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
         * {
@@ -14,26 +14,80 @@
             font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 0;
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('waldaa.jpg') no-repeat center center fixed;
-            background-size: cover;
+            /* Haalluu duubbaa abaaboo fi dhangala'aa (Mandala Theme) */
+            background: radial-gradient(circle, #1a0b2e 0%, #0a0414 100%);
             min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
             padding: 20px;
+            overflow-x: hidden;
         }
+
+        /* --- ARMAAN GADIIN BOCA ABAABOO (FLOWER/MANDALA EFFECT) UUMNA --- */
+        .flower-background {
+            position: relative;
+            width: 100%;
+            max-width: 530px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Xiyyoo / Baala Abaaboo Haalluu Garaagaraa (Layer 1) */
+        .flower-background::before {
+            content: '';
+            position: absolute;
+            width: 115%;
+            height: 115%;
+            border-radius: 43% 57% 41% 59% / 57% 45% 55% 43%;
+            background: linear-gradient(45deg, #e74c3c, #9b59b6, #3498db, #e67e22, #2ecc71);
+            background-size: 300% 300%;
+            animation: glowRotate 8s linear infinite, waveEffect 4s ease-in-out infinite alternate;
+            z-index: 1;
+            filter: blur(15px);
+            opacity: 0.85;
+        }
+
+        /* Xiyyoo / Baala Abaaboo Gidduu (Layer 2) */
+        .flower-background::after {
+            content: '';
+            position: absolute;
+            width: 108%;
+            height: 108%;
+            border-radius: 55% 45% 60% 40% / 45% 60% 40% 55%;
+            background: linear-gradient(135deg, #f1c40f, #e74c3c, #1abc9c, #9b59b6);
+            background-size: 200% 200%;
+            animation: glowRotate 12s linear infinite reverse;
+            z-index: 1;
+            filter: blur(8px);
+            opacity: 0.9;
+        }
+
+        /* Animashinii Haalluu Naanneessuufi Mirmirsuuf */
+        @keyframes glowRotate {
+            0% { background-position: 0% 50%; transform: rotate(0deg); }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; transform: rotate(360deg); }
+        }
+        @keyframes waveEffect {
+            0% { border-radius: 43% 57% 41% 59% / 57% 45% 55% 43%; }
+            100% { border-radius: 57% 43% 59% 41% / 45% 57% 43% 55%; }
+        }
+
+        /* --- SAANDUQA ODEEFFANNOO (MAIN CONTAINER) --- */
         .overlay-container {
-            background-color: rgba(255, 255, 255, 0.90);
+            background-color: rgba(255, 255, 255, 0.96);
             padding: 35px 30px;
-            border-radius: 20px;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
-            max-width: 500px;
+            border-radius: 24px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
             width: 100%;
             text-align: center;
-            backdrop-filter: blur(8px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            transition: all 0.3s ease;
+            position: relative;
+            z-index: 5; /* Abaaboo duubbaa jiru ol akka mullatuuf */
+            border: 2px solid rgba(255, 255, 255, 0.5);
         }
+
         h1 { 
             color: #1a252f; 
             font-size: 22px; 
@@ -57,7 +111,7 @@
             margin-bottom: 15px;
         }
         
-        /* Button Taphuu midhagsuuf */
+        /* Button Taphuu */
         .play-prompt {
             background: linear-gradient(135deg, #e74c3c, #c0392b);
             color: white;
@@ -68,19 +122,19 @@
             margin-bottom: 25px;
             cursor: pointer;
             box-shadow: 0 5px 15px rgba(231, 76, 60, 0.4);
-            animation: pulse 1.8s infinite;
+            animation: pulse 1.5s infinite;
             display: inline-block;
             width: 100%;
             border: none;
             outline: none;
         }
         @keyframes pulse {
-            0% { transform: scale(1); box-shadow: 0 5px 15px rgba(231, 76, 60, 0.4); }
-            50% { transform: scale(1.03); box-shadow: 0 5px 25px rgba(231, 76, 60, 0.6); }
-            100% { transform: scale(1); box-shadow: 0 5px 15px rgba(231, 76, 60, 0.4); }
+            0% { transform: scale(1); }
+            50% { transform: scale(1.03); }
+            100% { transform: scale(1); }
         }
 
-        /* Caqasa/Quote midhagsuuf */
+        /* Caqasa/Quote */
         .quote { 
             font-style: italic; 
             background-color: #f8f9fa; 
@@ -91,7 +145,6 @@
             font-size: 13px; 
             color: #555;
             text-align: center; 
-            box-shadow: inset 0 1px 3px rgba(0,0,0,0.05);
         }
         
         /* Odeeffannoo Baankii */
@@ -126,15 +179,9 @@
             box-shadow: 0 2px 5px rgba(0,0,0,0.03);
             border-left: 3px solid #2ecc71;
         }
-        .bank-route strong {
-            color: #2c3e50;
-        }
         .phone-list p {
             margin: 6px 0;
             font-size: 13px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
         }
         .notice-text {
             color: #e67e22;
@@ -143,7 +190,6 @@
             margin-top: 15px;
             border-top: 1px dashed #ddd;
             padding-top: 12px;
-            line-height: 1.4;
         }
         
         /* Button gargaarsaa */
@@ -163,7 +209,6 @@
         }
         .btn:hover {
             transform: translateY(-2px);
-            box-shadow: 0 7px 20px rgba(46, 204, 113, 0.4);
         }
         audio { display: none; }
     </style>
@@ -175,41 +220,44 @@
     Ilaalchisee: Browser'n keessan audio kana hin tajaajilu.
 </audio>
 
-<div class="overlay-container">
-    <button class="play-prompt" id="playTrigger">
-        🎵 KAI TUQI: Faarfannaa Alamaayyoo Dhaggeeffadhu!
-    </button>
+<!-- Saanduuqa duubbaatti xiyyoo abaaboo uumuuf kan dabalame -->
+<div class="flower-background">
+    <div class="overlay-container">
+        <button class="play-prompt" id="playTrigger">
+            🎵 KAI TUQI: Faarfannaa Alamaayyoo Dhaggeeffadhu!
+        </button>
 
-    <h1>WALDAA W/W/W/M/Y TIIBEE HAARAA</h1>
-    <h3>Waamicha Tumsa fi Gargaarsa Meeshaalee Muuziiqaa</h3>
-    
-    <p>Nagaan Gooftaa keenya Iyyesuus Kiristoos bakka jirtanitti isiniif haa baay'atu.</p>
-    <p>Waldaan keenya <strong>W/W/W/M/Y Tiibee Haaraa</strong> ishiin itti dhalannee guddinne har'a meeshaaleen muuziiqaa tajaajilaa turan garmalee jalaa caccabanii jiru. Sagaleen Waaqayyoo fi faarfannaan akka hin dhaabbanneef tumsa keessan barbaaddi. Maaloo waliin waldaa keenya haa deeggarru!</p>
-
-    <div class="quote">
-        "Hundi isaanii garmalee gammadoo turan, sanyiin garii tajaajila Waaqayyoof ni kennan."
-    </div>
-
-    <button class="btn" id="acceptBtn">Accept & Help (Gargaaruuf Waliigale)</button>
-
-    <div class="bank-details" id="bankInfo">
-        <h4>Odeeffannoo Herrega Baankii Waldaa:</h4>
+        <h1>WALDAA W/W/W/M/Y TIIBEE HAARAA</h1>
+        <h3>Waamicha Tumsa fi Gargaarsa Meeshaalee Muuziiqaa</h3>
         
-        <div class="bank-route">
-            📌 <strong>Baankii Daldala Itoophiyaa (CBE):</strong><br>
-            • Lakk. Herreegaa: <strong style="color: #e74c3c; font-size: 15px;">1000698406015</strong><br>
-            • Maqaa: Habtamu Dhufera & Chala Getachew & Gemechis Emiyo
+        <p>Nagaan Gooftaa keenya Iyyesuus Kiristoos bakka jirtanitti isiniif haa baay'atu.</p>
+        <p>Waldaan keenya <strong>W/W/W/M/Y Tiibee Haaraa</strong> ishiin itti dhalannee guddinne har'a meeshaaleen muuziiqaa tajaajilaa turan garmalee jalaa caccabanii jiru. Sagaleen Waaqayyoo fi faarfannaan akka hin dhaabbanneef tumsa keessan barbaaddi. Maaloo waliin waldaa keenya haa deeggarru!</p>
+
+        <div class="quote">
+            "Hundi isaanii garmalee gammadoo turan, sanyiin garii tajaajila Waaqayyoof ni kennan."
         </div>
 
-        <h4>Lakk. Bilbilaa Tajaajiltootaa:</h4>
-        <div class="phone-list">
-            <p>📞 <strong>Lakk. Bilbilaa 1:</strong> +251 934456683</p>
-            <p>📞 <strong>Lakk. Bilbilaa 2:</strong> +251 917391913</p>
-            <p>📞 <strong>Lakk. Bilbilaa 3:</strong> +251 941394537</p>
-            <p>📞 <strong>Lakk. Bilbilaa 4:</strong> +251 952724474</p>
-        </div>
+        <button class="btn" id="acceptBtn">Accept & Help (Gargaaruuf Waliigale)</button>
 
-        <p class="notice-text">⚠️ Hubachiisa: Erga gumaacha keessan ergitanii booda, nagahee (screenshot) herreegaa lakk. bilbilaa armaan olii kanaan Telegram ykn WhatsApp irratti nuuf erguun nu gabaasaa. Waaqayyo isin haa eebbisu!</p>
+        <div class="bank-details" id="bankInfo">
+            <h4>Odeeffannoo Herrega Baankii Waldaa:</h4>
+            
+            <div class="bank-route">
+                📌 <strong>Baankii Daldala Itoophiyaa (CBE):</strong><br>
+                • Lakk. Herreegaa: <strong style="color: #e74c3c; font-size: 15px;">1000698406015</strong><br>
+                • Maqaa: Habtamu Dhufera & Chala Getachew & Gemechis Emiyo
+            </div>
+
+            <h4>Lakk. Bilbilaa Tajaajiltootaa:</h4>
+            <div class="phone-list">
+                <p>📞 <strong>Lakk. Bilbilaa 1:</strong> +251 934456683</p>
+                <p>📞 <strong>Lakk. Bilbilaa 2:</strong> +251 917391913</p>
+                <p>📞 <strong>Lakk. Bilbilaa 3:</strong> +251 941394537</p>
+                <p>📞 <strong>Lakk. Bilbilaa 4:</strong> +251 952724474</p>
+            </div>
+
+            <p class="notice-text">⚠️ Hubachiisa: Erga gumaacha keessan ergitanii booda, nagahee (screenshot) herreegaa lakk. bilbilaa armaan olii kanaan Telegram ykn WhatsApp irratti nuuf erguun nu gabaasaa. Waaqayyo isin haa eebbisu!</p>
+        </div>
     </div>
 </div>
 
@@ -230,7 +278,7 @@
 
     document.getElementById('acceptBtn').addEventListener('click', function(e) {
         e.stopPropagation(); 
-        document.getElementById('bankInfo').style.style.display = 'block';
+        document.getElementById('bankInfo').style.display = 'block';
         this.style.display = 'none';
         alert("Waliigaluu keessaniif galatoomaa! Gumaacha keessan odeeffannoo herrega baankii gadiitiin erguu dandeessu.");
     });
