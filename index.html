@@ -1,152 +1,231 @@
 <!DOCTYPE html>
 <html lang="om">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gargaarsa Waldaa W/W/W/M/Y Tiibee Haaraa</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-            background: url('waldaa.jpg') no-repeat center center fixed;
-            background-size: cover;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        .overlay-container {
-            background-color: rgba(255, 255, 255, 0.94);
-            padding: 25px;
-            border-radius: 15px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-            max-width: 480px;
-            width: 90%;
-            text-align: center;
-            backdrop-filter: blur(5px);
-        }
-        h1 { color: #2c3e50; font-size: 18px; margin-bottom: 5px; }
-        h3 { color: #e74c3c; font-size: 14px; margin-top: 0; margin-bottom: 15px; }
-        p { color: #34495e; line-height: 1.5; font-size: 14px; text-align: justify; }
-        
-        .play-prompt {
-            background-color: #e74c3c;
-            color: white;
-            padding: 12px;
-            border-radius: 8px;
-            font-weight: bold;
-            margin-bottom: 15px;
-            cursor: pointer;
-            animation: pulse 1.5s infinite;
-        }
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.03); }
-            100% { transform: scale(1); }
-        }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gargaarsa Waldaa W/W/W/M/Y Tiibee Haaraa</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.75)), url('waldaa.jpg') no-repeat center center fixed;
+            background-size: cover;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
 
-        .quote { font-style: italic; background-color: #f1f2f6; padding: 8px; border-left: 4px solid #3498db; margin: 10px 0; font-size: 13px; text-align: center; }
-        
-        .bank-details { 
-            background-color: #e8f4f8; 
-            padding: 15px; 
-            border-radius: 8px; 
-            margin-top: 15px; 
-            display: none; 
-            font-size: 13px; 
-            text-align: left; 
-            border: 1px solid #bce1ec;
-        }
-        .bank-details h4 {
-            margin-top: 0;
-            color: #2c3e50;
-            border-bottom: 1px dashed #3498db;
-            padding-bottom: 5px;
-        }
-        .bank-route {
-            margin-bottom: 10px;
-            padding: 5px;
-            background: white;
-            border-radius: 4px;
-        }
-        .notice-text {
-            color: #e67e22;
-            font-weight: bold;
-            font-size: 12px;
-            margin-top: 10px;
-            border-top: 1px solid #ddd;
-            padding-top: 8px;
-        }
-        .btn { background-color: #2ecc71; color: white; border: none; padding: 12px 25px; font-size: 14px; font-weight: bold; border-radius: 20px; cursor: pointer; margin-top: 10px; }
-        audio { display: none; }
-    </style>
+        .overlay-container {
+            background-color: rgba(255, 255, 255, 0.96);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+            max-width: 480px;
+            width: 90%;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            margin: 20px 0;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        /* Halluu Mata Dureewwanii */
+        h1 { 
+            color: #2c3e50; /* Buluu Dukkanaawaa */
+            font-size: 20px; 
+            margin-bottom: 5px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        h3 { 
+            color: #e74c3c; /* Diimaa Ifaa */
+            font-size: 15px; 
+            margin-top: 0; 
+            margin-bottom: 20px; 
+            font-weight: 600;
+        }
+        p { 
+            color: #2f3640; /* Magariisa Dukkanaa/Gurraacha lallafaa */
+            line-height: 1.6; 
+            font-size: 14.5px; 
+            text-align: justify; 
+        }
+
+        /* Kutaa barruu keessatti halluu addaa kennuuf */
+        .highlight-blue { color: #2980b9; font-weight: bold; }
+        .highlight-green { color: #27ae60; font-weight: bold; }
+        .highlight-orange { color: #d35400; font-weight: bold; }
+        
+        .play-prompt {
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+            color: white;
+            padding: 14px;
+            border-radius: 50px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(231, 76, 60, 0.4);
+            transition: transform 0.2s;
+            animation: pulse 1.8s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); box-shadow: 0 4px 15px rgba(231, 76, 60, 0.4); }
+            50% { transform: scale(1.04); box-shadow: 0 6px 20px rgba(231, 76, 60, 0.6); }
+            100% { transform: scale(1); box-shadow: 0 4px 15px rgba(231, 76, 60, 0.4); }
+        }
+
+        /* Halluu Caqasaa */
+        .quote { 
+            font-style: italic; 
+            background-color: #f7fafc; 
+            padding: 12px; 
+            border-left: 4px solid #e67e22; /* Sarara Keelloo/Orange */
+            margin: 15px 0; 
+            font-size: 14px; 
+            text-align: center;
+            color: #8e44ad; /* Barruu Dhiilgee/Purple */
+            border-radius: 0 8px 8px 0;
+            font-weight: 500;
+        }
+        
+        .bank-details { 
+            background-color: #f0f7f9; 
+            padding: 20px; 
+            border-radius: 12px; 
+            margin-top: 20px; 
+            display: none; 
+            font-size: 14px; 
+            text-align: left; 
+            border: 1px solid #cee5ed;
+            animation: fadeIn 0.5s ease-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .bank-details h4 {
+            margin-top: 15px;
+            margin-bottom: 8px;
+            color: #2980b9; /* Buluu */
+            border-bottom: 2px solid #2ecc71;
+            padding-bottom: 3px;
+            display: inline-block;
+        }
+        .bank-details h4:first-of-type {
+            margin-top: 0;
+        }
+        .bank-route {
+            margin-bottom: 15px;
+            padding: 12px;
+            background: white;
+            border-radius: 8px;
+            border-left: 4px solid #2ecc71;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        .phone-list p {
+            margin: 6px 0;
+            font-weight: 500;
+            color: #34495e;
+        }
+
+        .notice-text {
+            color: #c0392b; /* Diimaa ifaa dhowwuu */
+            font-weight: bold;
+            font-size: 12.5px;
+            margin-top: 15px;
+            border-top: 1px dashed #cbd5e0;
+            padding-top: 12px;
+            text-align: justify;
+        }
+
+        .btn { 
+            background: linear-gradient(135deg, #2ecc71, #27ae60); 
+            color: white; 
+            border: none; 
+            padding: 14px 30px; 
+            font-size: 15px; 
+            font-weight: bold; 
+            border-radius: 50px; 
+            cursor: pointer; 
+            margin-top: 15px; 
+            box-shadow: 0 4px 15px rgba(46, 204, 113, 0.4);
+            transition: all 0.3s ease;
+        }
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(46, 204, 113, 0.6);
+        }
+        audio { display: none; }
+    </style>
 </head>
 <body>
 
 <audio id="bgAudio" loop>
-    <source src="https://archive.org/download/alamayahu-m-yaa-gooftaa-qabeenya-kee/alamayahu_m_yaa_gooftaa_qabeenya_kee.mp3" type="audio/mpeg">
-    Ilaalchisee: Browser'n keessan audio kana hin tajaajilu.
+    <source src="https://archive.org/download/alamayahu-m-yaa-gooftaa-qabeenya-kee/alamayahu_m_yaa_gooftaa_qabeenya_kee.mp3" type="audio/mpeg">
+    Ilaalchisee: Browser'n keessan audio kana hin tajaajilu.
 </audio>
 
 <div class="overlay-container">
-    <div class="play-prompt" id="playTrigger">
-        🎵 KAI TUQI: Faarfannaa Alamaayyoo Dhaggeeffadhu!
-    </div>
+    <div class="play-prompt" id="playTrigger">
+        🎵 KAI TUQI: Faarfannaa Alamaayyoo Dhaggeeffadhu!
+    </div>
 
-    <h1>WALDAA W/W/W/M/Y TIIBEE HAARAA</h1>
-    <h3>Waamicha Tumsa fi Gargaarsa Meeshaalee Muuziiqaa</h3>
-    
-    <p>Nagaan Gooftaa keenya Iyyesuus Kiristoos bakka jirtanitti isiniif haa baay'atu.</p>
-    <p>Waldaan keenya <strong>W/W/W/M/Y Tiibee Haaraa</strong> ishiin itti dhalannee guddinne har'a meeshaaleen muuziiqaa tajaajilaa turan garmalee jalaa caccabanii jiru. Sagaleen Waaqayyoo fi faarfannaan akka hin dhaabbanneef tumsa keessan barbaaddi. Maaloo waliin waldaa keenya haa deeggarru!</p>
+    <h1>WALDAA W/W/W/M/Y TIIBEE HAARAA</h1>
+    <h3>Waamicha Tumsa fi Gargaarsa Meeshaalee Muuziiqaa</h3>
+    
+    <p>Nagaan Gooftaa keenya <span class="highlight-blue">Iyyesuus Kiristoos</span> bakka jirtanitti isiniif haa baay'atu.</p>
+    <p>Waldaan keenya <span class="highlight-blue">W/W/W/M/Y Tiibee Haaraa</span> ishiin itti dhalannee guddinne har'a meeshaaleen muuziiqaa tajaajilaa turan garmalee jalaa caccabanii jiru. Sagaleen Waaqayyoo fi faarfannaan akka hin dhaabbanneef tumsa keessan barbaaddi. Maaloo waliin waldaa keenya <span class="highlight-green">haa deeggarru!</span></p>
 
-    <div class="quote">
-        "Hundi isaanii garmalee gammadoo turan, sanyiin garii tajaajila Waaqayyoof ni kennan."
-    </div>
+    <div class="quote">
+        "Hundi isaanii garmalee gammadoo turan, sanyiin garii tajaajila Waaqayyoof ni kennan."
+    </div>
 
-    <button class="btn" id="acceptBtn">Accept & Help (Gargaaruuf Waliigale)</button>
+    <button class="btn" id="acceptBtn">Accept & Help (Gargaaruuf Waliigale)</button>
 
-    <div class="bank-details" id="bankInfo">
-        <h4>Odeeffannoo Herrega Baankii Waldaa:</h4>
-        
-        <div class="bank-route">
-            📌 <strong>Baankii Daldala Itoophiyaa (CBE):</strong><br>
-            • Lakk. Herreegaa: 1000698406015<br>
-            • Maqaa: Habtamu Dhufera & Chala Getachew & Gemechis Emiyo
-        </div>
+    <div class="bank-details" id="bankInfo">
+        <h4>Odeeffannoo Herrega Baankii:</h4>
+        
+        <div class="bank-route">
+            📌 <span style="color: #2980b9; font-weight: bold;">Baankii Daldala Itoophiyaa (CBE):</span><br>
+            • Lakk. Herreegaa: <strong style="color: #e74c3c; font-size: 16px;">1000698406015</strong><br>
+            • Maqaa: <span class="highlight-orange">Habtamu Dhufera & Chala Getachew & Gemechis Emiyo</span>
+        </div>
 
-        <h4>Lakk. Bilbilaa Tajaajiltootaa:</h4>
-        <p>📞 Lakk. Bilbilaa 1: +251 934456683</p>
-        <p>📞 Lakk. Bilbilaa 2: +251 917391913</p>
-        <p>📞 Lakk. Bilbilaa 3: +251 941394537</p>
-        <p>📞 Lakk. Bilbilaa 4: +251 952724474</p>
+        <h4>Lakk. Bilbilaa Tajaajiltootaa:</h4>
+        <div class="phone-list">
+            <p>📞 Lakk. Bilbilaa 1: <span style="color: #27ae60;">+251 934456683</span></p>
+            <p>📞 Lakk. Bilbilaa 2: <span style="color: #27ae60;">+251 917391913</span></p>
+            <p>📞 Lakk. Bilbilaa 3: <span style="color: #27ae60;">+251 941394537</span></p>
+            <p>📞 Lakk. Bilbilaa 4: <span style="color: #27ae60;">+251 952724474</span></p>
+        </div>
 
-        <p class="notice-text">⚠️ Hubachiisa: Erga gumaacha keessan ergitanii booda, nagahee (screenshot) herreegaa lakk. bilbilaa armaan olii kanaan Telegram ykn WhatsApp irratti nuuf erguun nu gabaasaa. Waaqayyo isin haa eebbisu!</p>
-    </div>
+        <p class="notice-text">⚠️ Hubachiisa: Erga gumaacha keessan ergitanii booda, nagahee (screenshot) herreegaa lakk. bilbilaa armaan olii kanaan Telegram ykn WhatsApp irratti nuuf erguun nu gabaasaa. Waaqayyo isin haa eebbisu!</p>
+    </div>
 </div>
 
 <script>
-    var audio = document.getElementById('bgAudio');
-    var playTrigger = document.getElementById('playTrigger');
+    var audio = document.getElementById('bgAudio');
+    var playTrigger = document.getElementById('playTrigger');
 
-    function startAudio() {
-        audio.play().then(() => {
-            playTrigger.style.display = 'none'; 
-        }).catch(error => {
-            console.log("Autoplay dhowwameera, tuqannaa deebi'ii yaali.");
-        });
-    }
+    function startAudio() {
+        audio.play().then(() => {
+            playTrigger.style.display = 'none'; 
+        }).catch(error => {
+            console.log("Autoplay dhowwameera, tuqannaa deebi'ii yaali.");
+        });
+    }
 
-    playTrigger.addEventListener('click', startAudio);
-    document.body.addEventListener('click', startAudio, { once: true }); 
+    playTrigger.addEventListener('click', startAudio);
+    document.body.addEventListener('click', startAudio, { once: true }); 
 
-    document.getElementById('acceptBtn').addEventListener('click', function(e) {
-        e.stopPropagation(); 
-        document.getElementById('bankInfo').style.display = 'block';
-        this.style.display = 'none';
-        alert("Waliigaluu keessaniif galatoomaa! Gumaacha keessan odeeffannoo herrega baankii gadiitiin erguu dandeessu.");
-    });
+    document.getElementById('acceptBtn').addEventListener('click', function(e) {
+        e.stopPropagation(); 
+        document.getElementById('bankInfo').style.display = 'block';
+        this.style.display = 'none';
+        alert("Waliigaluu keessaniif galatoomaa! Gumaacha keessan odeeffannoo herrega baankii gadiitiin erguu dandeessu.");
+    });
 </script>
 
 </body>
-</html>       ..............decor gochuuf kannaara 
+</html>
