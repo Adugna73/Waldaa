@@ -9,7 +9,6 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
-            /* Suuraa waldaa keessanii guutummaatti duubbee (background) godha */
             background: url('waldaa.jpg') no-repeat center center fixed;
             background-size: cover;
             height: 100vh;
@@ -17,112 +16,93 @@
             justify-content: center;
             align-items: center;
         }
-        /* Kofoo barreeffama gidduu jiru haala namatti toluun iffisa */
         .overlay-container {
-            background-color: rgba(255, 255, 255, 0.88); /* Duubbee adii xiqqoo calaqqisu */
+            background-color: rgba(255, 255, 255, 0.92);
             padding: 25px;
             border-radius: 15px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-            max-width: 500px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            max-width: 480px;
             width: 90%;
             text-align: center;
-            backdrop-filter: blur(5px); /* Duubbee suuraa sana xiqqoo calaqqisiisa */
+            backdrop-filter: blur(5px);
         }
-        h1 {
-            color: #2c3e50;
-            font-size: 20px;
-            margin-bottom: 5px;
-        }
-        h3 {
-            color: #e74c3c;
-            font-size: 15px;
-            margin-top: 0;
-            margin-bottom: 15px;
-        }
-        p {
-            color: #34495e;
-            line-height: 1.5;
-            font-size: 14px; /* Qubee xixiqqoo dubbisuuf mijaawaa ta'e */
-            text-align: justify;
-        }
-        .quote {
-            font-style: italic;
-            background-color: #f1f2f6;
-            padding: 8px;
-            border-left: 4px solid #3498db;
-            margin: 10px 0;
-            font-size: 13px;
-        }
-        .bank-details {
-            background-color: #e8f4f8;
-            padding: 12px;
-            border-radius: 8px;
-            margin-top: 15px;
-            display: none;
-            font-size: 13px;
-            text-align: left;
-        }
-        .btn {
-            background-color: #2ecc71;
+        h1 { color: #2c3e50; font-size: 18px; margin-bottom: 5px; }
+        h3 { color: #e74c3c; font-size: 14px; margin-top: 0; margin-bottom: 15px; }
+        p { color: #34495e; line-height: 1.5; font-size: 14px; text-align: justify; }
+        
+        /* Battonii Muuziiqaa Jalqabsiisu */
+        .play-prompt {
+            background-color: #3498db;
             color: white;
-            border: none;
-            padding: 10px 25px;
-            font-size: 15px;
+            padding: 10px;
+            border-radius: 8px;
             font-weight: bold;
-            border-radius: 20px;
+            margin-bottom: 15px;
             cursor: pointer;
-            margin-top: 10px;
-            transition: background 0.3s;
+            animation: pulse 1.5s infinite;
         }
-        .btn:hover {
-            background-color: #27ae60;
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.03); }
+            100% { transform: scale(1); }
         }
-        /* Iddoo audio dhokataa ta'e */
-        audio {
-            display: none;
-        }
+
+        .quote { font-style: italic; background-color: #f1f2f6; padding: 8px; border-left: 4px solid #3498db; margin: 10px 0; font-size: 13px; }
+        .bank-details { background-color: #e8f4f8; padding: 12px; border-radius: 8px; margin-top: 15px; display: none; font-size: 13px; text-align: left; }
+        .btn { background-color: #2ecc71; color: white; border: none; padding: 10px 25px; font-size: 14px; font-weight: bold; border-radius: 20px; cursor: pointer; margin-top: 10px; }
+        audio { display: none; }
     </style>
 </head>
 <body>
 
-<audio id="bgAudio" autoplay loop controls>
+<audio id="bgAudio" loop>
     <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3" type="audio/mpeg">
 </audio>
 
 <div class="overlay-container">
+    <div class="play-prompt" id="playTrigger">
+        🎵 Fuula Kana Tuqiiti Faarfannaa Dhaggeeffadhu!
+    </div>
+
     <h1>WALDAA W/W/W/M/Y TIIBEE HAARAA</h1>
     <h3>Waamicha Tumsa fi Gargaarsa Meeshaalee Muuziiqaa</h3>
     
     <p>Nagaan Gooftaa keenya Iyyesuus Kiristoos bakka jirtanitti isiniif haa baay'atu.</p>
-    
-    <p>Waldaan keenya <strong>W/W/W/M/Y Tiibee Haaraa</strong> ishiin itti dhalannee guddinne har'a meeshaaleen muuziiqaa tajaajilaa turan garmalee jalaa caccabanii jiru. Sagaleen Waaqayyoo fi faarfannaan akka hin dhaabbanneef tumsa keessan barbaaddi. Maaloo waliin waldaa keenya haa deeggarru!</p>
+    <p>Waldaan keenya <strong>W/W/W/M/Y Tiibee Haaraa</strong> ishiin itti dhalannee guddinne har'a meeshaaleen muuziiqaa tajaajilaa turan garmalee jalaa caccabanii jiru. Sagaleen Waaqayyoo fi faarfannaan akka hin dhaabbanneef tumsa keessan barbaaddi.</p>
 
     <div class="quote">
-        "Hundi isaanii garmalee gammadoo turan, sanyiin garii tajaajila Waaqayyoof ni kennan."
+        "Hundi isaanii garmalee gammadoo turan..."
     </div>
 
     <button class="btn" id="acceptBtn">Accept & Help (Gargaaruuf Waliigale)</button>
 
     <div class="bank-details" id="bankInfo">
-        <p><strong>CBE (Baankii Daldalaa):</strong> 1000xxxxxxxx (Maqaa Waldaatiin)</p>
+        <p><strong>CBE:</strong> 1000xxxxxxxx (Maqaa Waldaatiin)</p>
         <p><strong>Lakk. Bilbilaa:</strong> +251 9xx-xx-xx-xx</p>
     </div>
 </div>
 
 <script>
-    // Namni sun skiriinii yoo tuqe muuziiqaan akka ofiin ka'u gargaara (Browser heddameef)
-    document.body.addEventListener('click', function() {
-        var audio = document.getElementById('bgAudio');
-        if (audio.paused) {
-            audio.play();
-        }
-    });
+    var audio = document.getElementById('bgAudio');
+    var playTrigger = document.getElementById('playTrigger');
+
+    // Namni sun battonii dhiibee ykn skiriinii tuqeen muuziiqaan ni ka'a
+    function startAudio() {
+        audio.play().then(() => {
+            playTrigger.style.display = 'none'; // Erga taphachuu eegeleen ni dhabama
+        }).catch(error => {
+            console.log("Autoplay dhowwameera, tuqannaa deebi'ii yaali.");
+        });
+    }
+
+    playTrigger.addEventListener('click', startAudio);
+    document.body.addEventListener('click', startAudio, { once: true }); // Skiriinii altokkof qofa
 
     document.getElementById('acceptBtn').addEventListener('click', function(e) {
-        e.stopPropagation(); // Audio akka hin dhaabneef
+        e.stopPropagation(); 
         document.getElementById('bankInfo').style.display = 'block';
         this.style.display = 'none';
-        alert("Waliigaluu keessaniif galatoomaa! Gumaacha keessan herrega baankii gadiitiin erguu dandeessu.");
+        alert("Waliigaluu keessaniif galatoomaa!");
     });
 </script>
 
