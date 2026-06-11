@@ -28,12 +28,14 @@
             backdrop-filter: blur(10px);
             margin: 20px 0;
             border: 1px solid rgba(255, 255, 255, 0.2);
+            box-sizing: border-box;
         }
 
         /* Halluu Mata Dureewwanii */
         h1 { 
             color: #2c3e50; 
             font-size: 20px; 
+            margin-top: 0;
             margin-bottom: 5px;
             text-transform: uppercase;
             letter-spacing: 0.5px;
@@ -151,6 +153,7 @@
             margin-top: 15px; 
             box-shadow: 0 4px 15px rgba(46, 204, 113, 0.4);
             transition: all 0.3s ease;
+            width: 100%;
         }
         .btn:hover {
             transform: translateY(-2px);
@@ -168,7 +171,7 @@
 
 <div class="overlay-container">
     <div class="play-prompt" id="playTrigger">
-        🎵 KAI TUQI:Addisu_Wayima___Ati_Waaqayyodha(256k)!
+        🎵 KAI TUQI: Addisu Wayima - Ati Waaqayyodha!
     </div>
 
     <h1>WALDAA W/W/W/M/Y TIIBEE HAARAA</h1>
@@ -208,14 +211,17 @@
     var audio = document.getElementById('bgAudio');
     var playTrigger = document.getElementById('playTrigger');
 
+    function updatePlayUI() {
+        playTrigger.innerHTML = "🎵 Taphachaa Jira... (Dhaggeeffadhu)";
+        playTrigger.style.animation = "none";
+        playTrigger.style.background = "linear-gradient(135deg, #27ae60, #2ecc71)";
+    }
+
     function startAudio(e) {
         if(e) e.stopPropagation(); 
         
         audio.play().then(() => {
-            // Yommuu muuziiqaan taphatu barruun isaa ofumaan gara magariisaatti jijjiirama
-            playTrigger.innerHTML = "🎵 Taphachaa Jira... (Dhaggeeffadhu)";
-            playTrigger.style.animation = "none";
-            playTrigger.style.background = "linear-gradient(135deg, #27ae60, #2ecc71)"; 
+            updatePlayUI();
         }).catch(error => {
             console.log("Autoplay dhowwameera: " + error);
         });
@@ -226,8 +232,16 @@
 
     document.getElementById('acceptBtn').addEventListener('click', function(e) {
         e.stopPropagation(); 
-        document.getElementById('bankInfo').style.display = 'block';
+        document.getElementById('bankInfo').style.style.display = 'block';
         this.style.display = 'none';
+        
+        // Yoo muuziiqaan tajaajilaa hin jirre ta'e ofumaan akka jalqabu gargaara
+        audio.play().then(() => {
+            updatePlayUI();
+        }).catch(err => {
+            console.log("Audio play failed on accept: " + err);
+        });
+
         alert("Waliigaluu keessaniif galatoomaa! Gumaacha keessan odeeffannoo herrega baankii gadiitiin erguu dandeessu.");
     });
 </script>
