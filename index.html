@@ -2,124 +2,31 @@
 <html lang="om">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gargaarsa Waldaa</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.75)), url('waldaa.jpg') no-repeat center center fixed;
-            background-size: cover;
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 20px 0;
-        }
-
-        .overlay-container {
-            background-color: rgba(255, 255, 255, 0.96);
-            padding: 30px;
-            border-radius: 20px;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
-            max-width: 480px;
-            width: 90%;
-            text-align: center;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            box-sizing: border-box;
-        }
-
-        h1 { color: #2c3e50; font-size: 20px; margin-top: 0; margin-bottom: 5px; text-transform: uppercase; }
-        h3 { color: #e74c3c; font-size: 15px; margin-top: 0; margin-bottom: 20px; font-weight: 600; }
-        p { color: #2f3640; line-height: 1.6; font-size: 14.5px; text-align: justify; }
-        .highlight-blue { color: #2980b9; font-weight: bold; }
-        .highlight-green { color: #27ae60; font-weight: bold; }
-        
-        .btn { 
-            background: linear-gradient(135deg, #2ecc71, #27ae60); 
-            color: white; 
-            border: none; 
-            padding: 14px 30px; 
-            font-size: 16px; 
-            font-weight: bold; 
-            border-radius: 50px; 
-            cursor: pointer; 
-            margin-top: 15px; 
-            width: 100%; 
-            box-shadow: 0 4px 15px rgba(46, 204, 113, 0.3);
-            animation: pulse 1.8s infinite;
-        }
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.03); }
-            100% { transform: scale(1); }
-        }
-
-        .bank-details { 
-            background-color: #f0f7f9; 
-            padding: 20px; 
-            border-radius: 12px; 
-            margin-top: 20px; 
-            display: none; 
-            text-align: left; 
-            border: 1px solid #cee5ed; 
-        }
-        .bank-route { 
-            margin-bottom: 15px; 
-            padding: 12px; 
-            background: white; 
-            border-radius: 8px; 
-            border-left: 4px solid #2ecc71; 
-        }
-        audio { display: none; }
-    </style>
 </head>
 <body>
 
-<!-- LIINKII FARFAANNAA OROMOO KAN AMMAAA -->
-<audio id="bgAudio" loop preload="auto">
-    <source src="https://github.com/adugna73/adugna73.github.io/raw/main/farfaanna.mp3" type="audio/mpeg">
-</audio>
+    <button id="playBtn" style="padding: 20px; font-size: 20px; cursor: pointer;">
+        👉 Accept & Help (Farfaannaa Banuuf)
+    </button>
 
-<div class="overlay-container">
-    <h1>WALDAA W/W/W/M/Y TIIBEE HAARAA</h1>
-    <h3>Waamicha Tumsa fi Gargaarsa Meeshaalee Muuziiqaa</h3>
-    <p>Nagaan Gooftaa keenya <span class="highlight-blue">Iyyesuus Kiristoos</span> isiniif haa baay'atu. Maaloo waliin waldaa keenya <span class="highlight-green">haa deeggarru!</span></p>
-    
-    <!-- BUTTON KANA YEROO TUQAN LIINKICHIS FARFAANNAANIS JALQABA -->
-    <button class="btn" id="acceptBtn">👉 Accept & Help (Ilaali)</button>
+    <!-- Koodiin kun faayila "farfaanna.mp3" kan repo kee keessa jiru fayyadama -->
+    <audio id="myAudio">
+        <source src="farfaanna.mp3" type="audio/mpeg">
+    </audio>
 
-    <div class="bank-details" id="bankInfo">
-        <div class="bank-route">
-            📌 <strong>Baankii Daldala Itoophiyaa (CBE):</strong><br>
-            • Lakk. Herreegaa: <strong>1000698406015</strong><br>
-            • Maqaa: Habtamu Dhufera & Chala Getachew
-        </div>
-        <p style="text-align: center; color: #27ae60; font-weight: bold; margin: 5px 0 0 0;">🎵 Farfaannaan taphachaa jira...</p>
-    </div>
-</div>
+    <script>
+        const btn = document.getElementById('playBtn');
+        const audio = document.getElementById('myAudio');
 
-<script>
-    var audio = document.getElementById('bgAudio');
-    var acceptBtn = document.getElementById('acceptBtn');
-    var bankInfo = document.getElementById('bankInfo');
-
-    acceptBtn.addEventListener('click', function() {
-        // Baankii argisiisi
-        bankInfo.style.display = 'block';
-        // Button sana dhoksi
-        this.style.display = 'none';
-        
-        // Kallattiin sagalee jalqabsiisi
-        audio.play().then(() => {
-            console.log("Audio started successfully!");
-        }).catch(err => {
-            console.log("Audio failed: " + err);
+        btn.addEventListener('click', function() {
+            audio.play().then(() => {
+                alert("Farfaannaan jalqabeera!");
+            }).catch(error => {
+                alert("Farfaannaan hin jalqabne, faayilichi sirriitti jiraachuu isaa mirkaneessi.");
+                console.log(error);
+            });
         });
-    });
-</script>
-
+    </script>
 </body>
 </html>
