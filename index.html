@@ -164,7 +164,6 @@
 </head>
 <body>
 
-<!-- LIINKII HAARAA: Muuziiqichi kallattiin interneetii irraa akka dubbisu godhameera -->
 <audio id="bgAudio" loop>
     <source src="https://archive.org/download/addisu-wayima-ati-waaqayyodha/Addisu_Wayima___Ati_Waaqayyodha(256k).mp3" type="audio/mpeg">
     Ilaalchisee: Browser'n keessan audio kana hin tajaajilu.
@@ -228,23 +227,26 @@
         });
     }
 
-    // Tuqannaa irratti muuziiqicha akka jalqabu godha
     playTrigger.addEventListener('click', startAudio);
 
     document.getElementById('acceptBtn').addEventListener('click', function(e) {
         e.stopPropagation(); 
-        // JavaScript syntax error 'style.style.display' sirreeffameera
+        
+        // 1. Dursa herrega baankii mul'isi, button sana immoo dhoksi
         document.getElementById('bankInfo').style.display = 'block';
         this.style.display = 'none';
         
-        // Yoo muuziiqaan tajaajilaa hin jirre ta'e ofumaan akka jalqabu gargaara
+        // 2. Muuziiqaan akka jalqabu gargaari
         audio.play().then(() => {
             updatePlayUI();
         }).catch(err => {
-            console.log("Audio play failed on accept: " + err);
+            console.log("Audio play failed: " + err);
         });
 
-        alert("Waliigaluu keessaniif galatoomaa! Gumaacha keessan odeeffannoo herrega baankii gadiitiin erguu dandeessu.");
+        // 3. TARTIBA HAARAA: Ergaan alert kun sekondii muraasa booda (boodarra) akka dhufu gochuu
+        setTimeout(function() {
+            alert("Waliigaluu keessaniif galatoomaa! Gumaacha keessan odeeffannoo herrega baankii gadiitiin erguu dandeessu.");
+        }, 300); // milliseconds 300 booda baana
     });
 </script>
 
