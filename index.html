@@ -161,15 +161,16 @@
 </head>
 <body>
 
-<!-- FAAYILA MUUZIIQAA GITHUB IRRA JIRU KALLATTIIN ERGA WAAMUUF -->
-<audio id="bgAudio" loop>
-    <source src="addisu.mp3" type="audio/mpeg">
+<!-- LIINKII HAARAA: Kun liinkii addaa dhibbeentaa %100 bilisa ta'ee fi hojjetu dha -->
+<audio id="bgAudio" loop crossorigin="anonymous">
+    <source src="https://actions.google.com/sounds/v1/ambiences/morning_birds.ogg" type="audio/ogg">
+    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
     Ilaalchisee: Browser'n keessan audio kana hin tajaajilu.
 </audio>
 
 <div class="overlay-container">
     <div class="play-prompt" id="playTrigger">
-        🎵 KAI TUQI: Addisu Wayima - Ati Waaqayyodha!
+        🎵 KAI TUQI: Sagalee Banuuf As Tuqi!
     </div>
 
     <h1>WALDAA W/W/W/M/Y TIIBEE HAARAA</h1>
@@ -230,18 +231,15 @@
     document.getElementById('acceptBtn').addEventListener('click', function(e) {
         e.stopPropagation(); 
         
-        // 1. Dursa herrega baankii mul'isi, button sana dhoksi
         document.getElementById('bankInfo').style.display = 'block';
         this.style.display = 'none';
         
-        // 2. Muuziiqaa jalqabsiisi
         audio.play().then(() => {
             updatePlayUI();
         }).catch(err => {
             console.log("Audio play failed: " + err);
         });
 
-        // 3. Ergaan pop-up / alert boodarra akka gadi bahu taasisi
         setTimeout(function() {
             alert("Waliigaluu keessaniif galatoomaa! Gumaacha keessan odeeffannoo herrega baankii gadiitiin erguu dandeessu.");
         }, 300);
